@@ -6,29 +6,15 @@
 
 ---
 
-## The bug that shaped this project
-
-On 2026-08-24 at 05:33, a production alert on BTCUSDT led the AI co-pilot to recommend "sell on continuation." Minutes later, Bitcoin rallied ~3.7%.
-
-Pulling the actual session from Redis exposed two root causes, both in the platform — not the model:
-
-1. **Corrupted indicators.** Incremental calculators (EMA, RSI, ATR) restarted from zero on every service restart. In the payload sent to the AI, the first candle carried `ema26 = 10,913` against a price of `76,519`. Roughly **60% of the 96 candles sent were mathematically invalid** — the MACD only became meaningful 15 hours into a 24-hour window.
-2. **A binary prompt.** The instruction demanded *"say which is the best opportunity — buy or sell."* At that exact moment, the stochastic was at 13.75 and turning up, price sat 0.3% above the lower Bollinger band — the honest answer was to wait. The prompt didn't allow it.
-
-**What changed as a result:**
-- Indicator state is bootstrapped from exchange REST history on cold start, with a write guard that refuses to publish non-converged values. Never publish a degenerate value — `0.0` and `100.0` are indistinguishable from legitimate readings and cause silent bad decisions downstream.
-- The AI can answer **WAIT** as a first-class response, with a required confluence threshold (3+ independent signals) for any directional call.
-- The payload sent to the model was rebuilt: from ~30KB of escaped JSON to a compact table under 4KB, preceded by a **Java-computed summary header** (regime, divergence, %B, timeframe alignment). The lesson: an LLM doesn't infer temporal patterns from a raw numeric snapshot — conclusions must be pre-computed and handed to it.
-
-**The one-sentence takeaway:** the model wasn't wrong — it was fed corrupted data and asked a question that forbade the correct answer.
-
 ## What it does
 
-TradePilot reads over 2,500 tradable pairs on Binance and CoinEx every minute, filters for liquidity, and applies real-time technical analysis to surface trading opportunities — before impulse does. Three alert classes, each answering a different question:
+TradePilot reads over 2,500 tradable pairs on Binance and CoinEx every minute, filters for liquidity, and applies real-time technical analysis to surface trading opportunities — before impulse does. Built and maintained solo: the exchange abstraction, the event-driven pipeline, the indicator engine, the AI orchestration layer, and the on-chain billing integration were all designed and implemented from scratch, end to end.
 
-- **MOMENTUM ↑/↓** — a volume spike **with confirmed direction** (buy ratio, ADX/DI, %B). Directionless spikes no longer alert.
-- **EXHAUSTION** — a price extreme, plus what it means in the current regime: ranging market → the extreme likely mean-reverts; trending market → it may simply continue. No arrow — arrows are reserved for direction, exhaustion is not direction.
-- **SQUEEZE** — volatility compression (Bollinger Bands tightening) detected *before* the move, with the consolidation range. Explicitly a heads-up, not an entry signal.
+Three alert classes, each answering a different question:
+
+- **MOMENTUM ↑/↓** — a volume spike **with confirmed direction** (buy ratio, ADX/DI, %B). Directionless spikes don't alert.
+- **EXHAUSTION** — a price extreme, plus what it means in the current regime: ranging market → the extreme likely mean-reverts; trending market → it may simply continue.
+- **SQUEEZE** — volatility compression (Bollinger Bands tightening) detected *before* the move, with the consolidation range. A heads-up, not an entry signal.
 
 On any alert, **AI Insight** hands the pre-computed indicators to an LLM (xAI Grok) and returns BUY, SELL, or **WAIT** — in the user's language and risk profile, with exact conditions to watch for if the answer is WAIT. The user can arm a **Watch** on those conditions and get pinged the instant they're met.
 
@@ -36,15 +22,26 @@ Once an order fills, the **Risk Pilot** takes over: automatic stop-loss where no
 
 **No order ever executes without the user's click.** Not a technical limitation — a design stance.
 
+## What makes it non-trivial
+
+- **A real exchange abstraction**, not a thin wrapper — Binance and CoinEx expose genuinely different field names, quirks, and rejection rules (CoinEx v2 hard-rejects a field Binance simply ignores), unified behind one interface so order-building logic is written once.
+- **An event-driven pipeline with no polling anywhere** — Redis keyspace notifications and RabbitMQ drive the entire flow from market tick to Discord alert.
+- **An indicator engine that survives restarts** — every incremental calculator (EMA, RSI, ADX) is stateless per tick and reseeds from persisted chain state, so a service restart never re-warms from zero.
+- **Grounded AI, not chat over an API** — the model never infers market structure from raw numbers; every signal it reasons over (regime, divergence, timeframe alignment) is pre-computed in Java and handed to it, with a required confluence threshold before any directional call.
+- **On-chain billing that's actually in production** — USDT subscriptions on Polygon via meta-transactions, so the user never pays gas.
+
+A concrete example of the rigor this demands: a production incident where corrupted indicator state and an overly rigid prompt led the AI to a wrong call is documented in [ARCHITECTURE.md](ARCHITECTURE.md#appendix-a-diagnosing-a-production-incident) — root cause, fix, and the lesson it left behind.
+
 ## Product tour (Discord UI)
 
 | | |
 |---|---|
-| **1 · MOMENTUM alert** — direction confirmed, evidence shown inline (`buyRatio 0.68 \| ADX 73 (+DI>-DI) \| %B 1.07`). | *screenshot* |
-| **2 · SQUEEZE** — the heads-up before the move, with the consolidation range. | *screenshot* |
-| **3 · AI Insight — WAIT** — conflicting signals, no forced call, exact conditions given, one click arms a Watch. | *screenshot* |
-| **4 · Watch triggered** — "CONFIRMAÇÃO ATINGIDA," the exact moment the conditions were met. | *screenshot* |
-| **5 · Weekly report** — realized/unrealized P&L, per position, via DM. | *screenshot* |
+| **1 · MOMENTUM alert** — direction confirmed, evidence shown inline (`buyRatio 0.68 \| ADX 73 (+DI>-DI) \| %B 1.07`). | <img src="docs/img/momentum.PNG" width="260" alt="MOMENTUM alert"> |
+| **2 · EXHAUSTION alert** — a price extreme, plus what it means in the current regime (ranging vs. trending). | <img src="docs/img/exauthion.PNG" width="260" alt="EXHAUSTION alert"> |
+| **3 · SQUEEZE** — the heads-up before the move, with the consolidation range. | <img src="docs/img/squeeze.PNG" width="260" alt="SQUEEZE alert"> |
+| **4 · AI Insight — WAIT** — conflicting signals, no forced call, exact conditions given, one click arms a Watch. | <img src="docs/img/wait.PNG" width="260" alt="AI Insight WAIT"> |
+| **5 · Watch triggered** — "CONFIRMAÇÃO ATINGIDA," the exact moment the conditions were met. | <img src="docs/img/watch_triggered.PNG" width="260" alt="Watch triggered"> |
+| **6 · Weekly report** — realized/unrealized P&L, per position, via DM. | <img src="docs/img/weekly-report.PNG" width="260" alt="Weekly report"> |
 
 ## Tech stack
 

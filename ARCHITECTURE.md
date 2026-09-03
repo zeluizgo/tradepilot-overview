@@ -102,4 +102,24 @@ See [`samples/`](samples/) for real, sanitized extracts covering exchange abstra
 
 ---
 
+## Appendix A. Diagnosing a production incident
+
+Referenced from the [README](README.md#what-makes-it-non-trivial) as a concrete example of the engineering discipline behind the system above — not the headline of the project, one incident among the decisions that shaped it.
+
+On 2026-08-24 at 05:33, a production alert on BTCUSDT led the AI co-pilot to recommend "sell on continuation." Minutes later, Bitcoin rallied ~3.7%.
+
+Pulling the actual session from Redis exposed two root causes, both in the platform — not the model:
+
+1. **Corrupted indicators.** Incremental calculators (EMA, RSI, ATR) restarted from zero on every service restart. In the payload sent to the AI, the first candle carried `ema26 = 10,913` against a price of `76,519`. Roughly 60% of the 96 candles sent were mathematically invalid — the MACD only became meaningful 15 hours into a 24-hour window.
+2. **A binary prompt.** The instruction demanded *"say which is the best opportunity — buy or sell."* At that exact moment, the stochastic was at 13.75 and turning up, price sat 0.3% above the lower Bollinger band — the honest answer was to wait. The prompt didn't allow it.
+
+**What changed as a result:**
+- Indicator state is bootstrapped from exchange REST history on cold start, with a write guard that refuses to publish non-converged values. Never publish a degenerate value — `0.0` and `100.0` are indistinguishable from legitimate readings and cause silent bad decisions downstream.
+- The AI can answer **WAIT** as a first-class response, with a required confluence threshold (3+ independent signals) for any directional call.
+- The payload sent to the model was rebuilt: from ~30KB of escaped JSON to a compact table under 4KB, preceded by a Java-computed summary header (regime, divergence, %B, timeframe alignment). The lesson: an LLM doesn't infer temporal patterns from a raw numeric snapshot — conclusions must be pre-computed and handed to it.
+
+The model wasn't wrong — it was fed corrupted data and asked a question that forbade the correct answer.
+
+---
+
 *These documents describe architecture patterns only. Production code, trading strategies, prompts, and model configurations are proprietary.*
