@@ -1,0 +1,130 @@
+2026.09.03 11:58:24 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.09.03 11:58:24 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:25 WARN  no build tool detected in workspace '/Users/joseluizgo/Desktop/Projects/tradepilot-overview'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.09.03 11:58:25 WARN  Build server is not auto-connectable.
+2026.09.03 11:58:25 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java
+2026.09.03 11:58:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:26 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:26 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:27 INFO  time: code lens generation in 1.35s
+2026.09.03 11:58:27 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:30 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:30 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 11:58:32 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 12:15:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ToolDispatch.java. Using fallback presentation compiler.
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java
+2026.09.03 12:15:49 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java
+2026.09.03 12:15:49 WARN  Running javac-semanticdb failed for file:///Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Output:
+
+2026.09.03 12:15:49 WARN  Running javac-semanticdb failed for file:///Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Output:
+
+2026.09.03 12:15:49 WARN  Running javac-semanticdb failed for file:///Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Output:
+
+2026.09.03 12:15:49 WARN  Running javac-semanticdb failed for file:///Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Output:
+
+2026.09.03 12:15:51 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:15:51 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:15:51 WARN  Running javac-semanticdb failed for file:///Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Output:
+
+2026.09.03 12:15:52 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:15:52 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:15:52 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:15:52 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:19 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:19 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:19 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:34 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:36 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:16:39 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:39 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java
+set. 03, 2026 12:16:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 56
+2026.09.03 12:16:39 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:40 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:39 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:41 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:45 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:47 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:50 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:16:56 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:16:56 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java
+set. 03, 2026 12:16:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 73
+2026.09.03 12:16:56 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:16:57 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:16:56 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:16:56 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:17:03 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+2026.09.03 12:17:03 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java
+set. 03, 2026 12:17:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 87
+2026.09.03 12:17:03 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+2026.09.03 12:17:03 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+2026.09.03 12:17:03 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+2026.09.03 12:17:13 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+set. 03, 2026 12:17:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 107
+2026.09.03 12:17:24 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:24 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java
+set. 03, 2026 12:17:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 114
+2026.09.03 12:17:24 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:24 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:24 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:27 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:17:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:31 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java
+2026.09.03 12:17:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:31 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:33 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:33 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:34 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
+2026.09.03 12:17:34 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:17:35 WARN  no build target for: /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java
+set. 03, 2026 12:17:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 152
+2026.09.03 12:17:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:17:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:17:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:17:35 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+set. 03, 2026 12:17:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTrace
+2026.09.03 12:18:22 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:22 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:22 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:23 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:23 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:25 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:26 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:26 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:27 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:27 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:27 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:28 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:29 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordButtonRouting.java. Using fallback presentation compiler.
+2026.09.03 12:18:49 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/DiscordOAuthFlow.java. Using fallback presentation compiler.
+2026.09.03 12:18:49 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/ExchangeAbstraction.java. Using fallback presentation compiler.
+2026.09.03 12:18:49 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/IncrementalIndicator.java. Using fallback presentation compiler.
+2026.09.03 12:18:49 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/PolygonSubscriptionContract.java. Using fallback presentation compiler.
+2026.09.03 12:18:49 INFO  no build target found for /Users/joseluizgo/Desktop/Projects/tradepilot-overview/samples/RedisEventHandling.java. Using fallback presentation compiler.
