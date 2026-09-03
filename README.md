@@ -87,13 +87,16 @@ No HTTP calls between services — coordination happens exclusively through Redi
 
 ## Sanitized samples
 
-See [`samples/`](samples/):
+See [`samples/`](samples/) — real extracts from the production codebase, sanitized (no credentials, no live endpoints, no contract addresses):
 
 | File | What it shows |
 |---|---|
-| [`tool-schema.json`](samples/tool-schema.json) | How tools are declared to the LLM (JSON Schema contract) |
-| [`ToolDispatch.java`](samples/ToolDispatch.java) | The validate → authorize → execute → audit pattern |
-| [`loader_job.py`](samples/loader_job.py) | Multi-exchange normalization pattern (PySpark) |
+| [`ExchangeAbstraction.java`](samples/ExchangeAbstraction.java) | Binance and CoinEx unified behind one interface, despite genuinely different field names and quirks (CoinEx v2 rejects `timeInForce` outright) |
+| [`IncrementalIndicator.java`](samples/IncrementalIndicator.java) | Stateless-per-tick indicator calculation, seeded from persisted chain state — the pattern that makes cold-start-safe indicators possible |
+| [`RedisEventHandling.java`](samples/RedisEventHandling.java) | Keyspace-notification-driven alert pipeline — no polling, plus a write-barrier pattern using key expiry instead of a distributed lock |
+| [`DiscordButtonRouting.java`](samples/DiscordButtonRouting.java) | Prefix-based button routing and the deferred-reply + dedicated-executor pattern required by Discord's interaction deadlines |
+| [`DiscordOAuthFlow.java`](samples/DiscordOAuthFlow.java) | OAuth2 identity capture that later feeds the on-chain subscription flow without re-deriving identity |
+| [`PolygonSubscriptionContract.java`](samples/PolygonSubscriptionContract.java) | On-chain subscription billing via meta-transactions — the user signs off-chain, a relayer wallet pays the gas |
 
 ## About the author
 

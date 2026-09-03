@@ -2,6 +2,37 @@
 
 > Companion to the [README](README.md). All diagrams and samples here are **illustrative**: they show the patterns used in production without exposing proprietary logic.
 
+## 0. Component overview
+
+```mermaid
+flowchart TB
+    UI[Discord UI<br/>alerts · buttons · embeds] --> MAIN
+
+    subgraph MAIN["cryptospringboot"]
+        DISC[JDA gateway + OAuth2 callback]
+        AI[TradingCopilotAgent<br/>xAI Grok tool-use]
+        SCREEN[Screener & alert engine]
+        BILL[Subscription billing]
+    end
+
+    MO[marketobserver] -->|Redis + RabbitMQ| HQ[springboot-historic-queue<br/>indicators + conclusions]
+    HQ -->|Redis| SCREEN
+    SCREEN --> AI
+    AI -->|typed tool calls| MAIN
+    MAIN -->|order execution| EX[Binance · CoinEx<br/>REST APIs]
+    MAIN -->|position data| PO[portfolioobserver<br/>risk management]
+    BILL -->|meta-tx| POLY[Polygon / EVM<br/>USDT subscription]
+
+    MO -.->|reads| EX
+
+    style MAIN fill:#fef3c7,stroke:#d97706
+    style HQ fill:#dbeafe,stroke:#2563eb
+    style PO fill:#dbeafe,stroke:#2563eb
+    style MO fill:#dcfce7,stroke:#16a34a
+```
+
+Four decoupled services, no HTTP calls between them — coordination happens exclusively through Redis and MongoDB. `cryptospringboot` is the only service users interact with directly; it owns the Discord gateway, the AI orchestration, the screener/alert logic, and subscription billing.
+
 ## 1. Grounded tool-use flow (the core pattern)
 
 The assistant never answers market questions from model memory. Every factual claim is grounded in a tool call executed and validated by the platform:
@@ -67,13 +98,7 @@ flowchart TB
 
 ## 4. Sanitized samples
 
-See [`samples/`](samples/):
-
-| File | What it shows |
-|---|---|
-| [`tool-schema.json`](samples/tool-schema.json) | How tools are declared to the LLM (JSON Schema contract) |
-| [`ToolDispatch.java`](samples/ToolDispatch.java) | The validate → authorize → execute → audit pattern in Spring |
-| [`loader_job.py`](samples/loader_job.py) | Multi-exchange normalization pattern in PySpark |
+See [`samples/`](samples/) for real, sanitized extracts covering exchange abstraction, incremental indicator state, Redis event handling, Discord interaction routing, OAuth identity capture, and the on-chain subscription contract.
 
 ---
 
